@@ -71,8 +71,19 @@ contains("Pencil", items, (cb) => console.log(cb));
 
 /* STRETCH PROBLEM */
 
+
+const tacos = ["bean", "bean", "bean", "chicken", "beef", "shrimp", "shrimp", "rice"];
 function removeDuplicates(array, cb) {
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
+
+  let uniquearray = [];
+  uniquearray = array.filter(function(item, pos, self) {
+
+    return self.indexOf(item) == pos;
+  });
+  return cb(uniquearray);
 }
+
+removeDuplicates(tacos, (cb) => console.log(cb));
