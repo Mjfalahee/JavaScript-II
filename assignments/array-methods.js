@@ -88,7 +88,44 @@ console.log(ticketPriceTotal);
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
+// The director wants to know the contribution from the runners representing the Skinix company. Total up the donations.
+
+let SkinixPriceTotal = [];
+let Skinixrunners = [];
+Skinixrunners = runners.filter(element => element.company_name === "Skinix");
+console.log(Skinixrunners);
+SkinixPriceTotal = Skinixrunners.reduce(function(runningTotal, currentValue) {
+
+    //console.log(`I am the accumulator ${runningTotal}`);
+    //console.log(`I am the currentValue ${currentValue.donation}`);
+    return runningTotal + currentValue.donation; }, 0); 
+console.log(SkinixPriceTotal);
 
 // Problem 2
 
+//Sorting donations into tiers
+
+// <$100
+let tier1 = [];
+// <$200
+let tier2sort = [];
+let tier2 = [];
+// >=$200
+let tier3 = [];
+
+tier1 = runners.filter(element => element.donation < 100);
+console.log(tier1);
+tier2sort = runners.filter(element => element.donation >= 100);
+tier2 = tier2sort.filter(element => element.donation < 200);
+console.log(tier2);
+tier3 = tier2sort.filter(element => element.donation >= 200);
+console.log(tier3);
+
+
 // Problem 3
+
+//Ran out of XL and XS shirts! Who needs a new one (I can't think of anything more creative..)
+
+let xLSshirts = [];
+xLSshirts = runners.filter(element => element.shirt_size === "XL" || element.shirt_size === "XS");
+console.log(xLSshirts);
