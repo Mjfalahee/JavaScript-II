@@ -1,7 +1,35 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
 
+function you() {
+  const maybeyoucan = "Maybe you can touch this";
+  console.log("You can't?");
 
+  function cant(){
+  
+    const maybeyoucant ="But also, maybe you can't.";
+    function touch(){
+
+    const definitelycan ="I'm sure I can";
+    console.log(definitelycan);
+      function it() {
+
+        const thisthisthis = "Touch this";
+        console.log(maybeyoucan);
+        console.log(maybeyoucant);
+        console.log(thisthisthis);
+      }
+
+      it();
+    }
+
+    touch();
+  }
+
+  cant();
+}
+
+you();
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
 
 
